@@ -1,7 +1,5 @@
 library age;
 
-import 'package:meta/meta.dart';
-
 /// AgeDuration class
 
 class AgeDuration {
