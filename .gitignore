@@ -4,3 +4,9 @@
 .idea/
 
 age.iml
+
+pubspec.lock
+
+.packages
+
+.dart_tool/
