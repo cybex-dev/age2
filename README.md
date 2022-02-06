@@ -2,13 +2,19 @@
 
 A Flutter package to calculate someone's age in days, months, and years; in addition it can be used to find the difference between two dates.
 
+Since the original package hasn't been updated for more than 2 years, this package is an extension of the original
+- Original developer: wixtime
+- Github: https://github.com/wixtime/age
+
 ## Getting Started
 
 In your flutter project add the dependency:
 
+```dart
 dependencies:
   ...
-  age: ^0.0.1
+  age: ^1.0.0
+```
 
 For help getting started with Flutter, view the online documentation.
 
