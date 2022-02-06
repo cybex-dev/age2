@@ -1,20 +1,5 @@
-# age
+import 'package:flutter_test/flutter_test.dart';
 
-A Flutter package to calculate someone's age in days, months, and years; in addition it can be used to find the difference between two dates.
-
-## Getting Started
-
-In your flutter project add the dependency:
-
-dependencies:
-  ...
-  age: ^0.0.1
-
-For help getting started with Flutter, view the online documentation.
-
-### Example
-
-```dart
 import 'package:age/age.dart';
 
 void main() {
@@ -40,4 +25,5 @@ void main() {
   print('You next birthday will be on $nextBirthdayDate or in $nextBirthdayDuration');
   // You next birthday will be on 2021-01-20 00:00:00.000 or in Years: 0, Months: 11, Days: 27
 }
-```
+
+
