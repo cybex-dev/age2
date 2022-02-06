@@ -45,10 +45,7 @@ class Age {
           : _daysInMonth[month - 1];
 
   /// dateDifference method
-  static AgeDuration dateDifference(
-      {@required DateTime fromDate,
-      @required DateTime toDate,
-      bool includeToDate = false}) {
+  static AgeDuration dateDifference({required DateTime fromDate, required DateTime toDate, bool includeToDate = false}) {
     // Check if toDate to be included in the calculation
     DateTime endDate = (includeToDate) ? toDate.add(Duration(days: 1)) : toDate;
 
@@ -97,8 +94,7 @@ class Age {
   }
 
   /// add method
-  static DateTime add(
-      {@required DateTime date, @required AgeDuration duration}) {
+  static DateTime add({required DateTime date, required AgeDuration duration}) {
     int years = date.year + duration.years;
     years += (date.month + duration.months) ~/ DateTime.monthsPerYear;
 
@@ -110,8 +106,7 @@ class Age {
   }
 
   /// subtract methos
-  static DateTime subtract(
-      {@required DateTime date, @required AgeDuration duration}) {
+  static DateTime subtract({required DateTime date, required AgeDuration duration}) {
     duration.days *= -1;
     duration.months *= -1;
     duration.years *= -1;
