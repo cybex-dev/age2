@@ -1,6 +1,4 @@
-import 'package:flutter_test/flutter_test.dart';
-
-import 'package:age/age.dart';
+import 'package:age2/age.dart';
 
 void main() {
   DateTime birthday = DateTime(1990, 1, 20);
