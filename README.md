@@ -21,7 +21,7 @@ For help getting started with Flutter, view the online documentation.
 ### Example
 
 ```dart
-import 'package:age/age.dart';
+import 'package:age/age2.dart';
 
 void main() {
   DateTime birthday = DateTime(1990, 1, 20);
