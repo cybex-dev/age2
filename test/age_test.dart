@@ -1,27 +1,33 @@
-import 'package:age2/age.dart';
+import 'package:age2/age2.dart';
+import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  DateTime birthday = DateTime(1990, 1, 20);
-  DateTime today = DateTime.now(); //2020/1/24
+  test("Check 18 or older", () {
+    final dateNow = DateTime.now();
+    final date18YearsAgo = DateTime(dateNow.year - 18, dateNow.month, dateNow.day);
+    final age = Age.dateDifference(fromDate: date18YearsAgo, toDate: dateNow);
+    expect(age.years, greaterThanOrEqualTo(18));
+  });
 
-  AgeDuration age;
+  test("Younger than 18", () {
+    final dateNow = DateTime.now();
+    DateTime dateAlmost18YearsAgo = DateTime(
+      dateNow.year - 18,
+      dateNow.month,
+      dateNow.day,
+      dateNow.hour,
+      dateNow.minute,
+      dateNow.second,
+      dateNow.millisecond,
+      dateNow.microsecond,
+    );
+    dateAlmost18YearsAgo = dateAlmost18YearsAgo.add(Duration(days: 1));
 
-  // Find out your age
-  age = Age.dateDifference(
-      fromDate: birthday, toDate: today, includeToDate: false);
+    final age = Age.dateDifference(fromDate: dateAlmost18YearsAgo, toDate: dateNow, includeToDate: false);
+    expect(age.years, lessThan(18));
+  });
 
-  print('Your age is $age'); // Your age is Years: 30, Months: 0, Days: 4
-
-  // Find out when your next birthday will be.
-  DateTime tempDate = DateTime(today.year, birthday.month, birthday.day);
-  DateTime nextBirthdayDate = tempDate.isBefore(today)
-      ? Age.add(date: tempDate, duration: AgeDuration(years: 1))
-      : tempDate;
-  AgeDuration nextBirthdayDuration =
-      Age.dateDifference(fromDate: today, toDate: nextBirthdayDate);
-
-  print('You next birthday will be on $nextBirthdayDate or in $nextBirthdayDuration');
-  // You next birthday will be on 2021-01-20 00:00:00.000 or in Years: 0, Months: 11, Days: 27
+  test("Check leap year", () {
+    expect(Age.isLeapYear(2024), equals(true));
+  });
 }
-
-
