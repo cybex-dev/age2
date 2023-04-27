@@ -7,7 +7,7 @@ documentation: https://github.com/cybex-dev/age2/wiki
 issue_tracker: https://github.com/cybex-dev/age2/issues
 
 environment:
-  sdk: ">=2.12.0 <3.0.0"
+  sdk: ">=2.17.0 <3.0.0"
 
 dependencies:
   flutter:
