@@ -13,7 +13,7 @@ In your flutter project add the dependency:
 ```dart
 dependencies:
   ...
-  age: ^1.0.0
+  age: ^1.1.1
 ```
 
 For help getting started with Flutter, view the online documentation.
