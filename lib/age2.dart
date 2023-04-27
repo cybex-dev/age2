@@ -2,7 +2,9 @@ import 'package:collection/collection.dart';
 
 import 'src/data.dart';
 import 'src/extensions/duration_extension.dart';
-import 'src/models/labelled_age_range.dart';
+import 'src/models/models.dart';
+
+export 'src/models/models.dart';
 
 class Age {
   static List<LabelledAgeRange> groups = ageData.map(LabelledAgeRange.fromJson).toList();
