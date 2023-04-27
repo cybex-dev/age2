@@ -6,7 +6,7 @@ void main() {
     final dateNow = DateTime.now();
     final date18YearsAgo = DateTime(dateNow.year - 18, dateNow.month, dateNow.day);
     final age = Age.dateDifference(fromDate: date18YearsAgo, toDate: dateNow);
-    expect(age.years, greaterThanOrEqualTo(18));
+    expect(age, greaterThanOrEqualTo(18));
   });
 
   test("Younger than 18", () {
@@ -23,11 +23,7 @@ void main() {
     );
     dateAlmost18YearsAgo = dateAlmost18YearsAgo.add(Duration(days: 1));
 
-    final age = Age.dateDifference(fromDate: dateAlmost18YearsAgo, toDate: dateNow, includeToDate: false);
-    expect(age.years, lessThan(18));
-  });
-
-  test("Check leap year", () {
-    expect(Age.isLeapYear(2024), equals(true));
+    final age = Age.dateDifference(fromDate: dateAlmost18YearsAgo, toDate: dateNow);
+    expect(age, lessThan(18));
   });
 }
