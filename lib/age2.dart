@@ -1,7 +1,5 @@
 library age;
 
-/// AgeDuration class
-
 class AgeDuration {
   int days;
   int months;
